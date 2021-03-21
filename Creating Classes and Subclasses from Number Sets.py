@@ -40,7 +40,7 @@ class Rationals(Algebraic):
     #Create all rationals from -100 to 100
     def __init__(self):
         self.lst_ratio = ['0/1']
-        for n in range(-pow(10,2),pow(10,2)):
+        for n in range(-pow(10,2),pow(10,2)+1):
             if n!= 0:
                 for m in range(1,pow(10,2)):
                     if str(n)+'/'+str(m) not in self.lst_ratio:
@@ -98,27 +98,28 @@ class Primes(Naturals):
 t = Transcendentals()
 
 #Creating Euler's number e using its factorial definition e= sum 0->inf 1/n!
-##e=0
-##for x in range(0,10000):
-##    e += 1/math.factorial(x)
+e=0
+for x in range(0,10000):
+    e += 1/math.factorial(x)
 
 #Creating Pi/4 using its factorial definition
-##pi= 0
-##k = 0
-##for x in range(1,10000000,2):
-##    k += 1
-##    if k %2 == 1:
-##        pi += 1/x
-##    else:
-##        pi -= 1/x
+pi= 0
+k = 0
+for x in range(1,10000000,2):
+    k += 1
+    if k %2 == 1:
+        pi += 1/x
+    else:
+        pi -= 1/x
 
 '''Adding e and Pi to the object t that is an instance of class Transcendentals
 using a method called add_element'''
-##t.add_element('e',e)
-##t.add_element(chr(960),4*pi)
+t.add_element('e',e)
+t.add_element(chr(960),4*pi)
 
 #Output the two elements added to the object t - Euler's number and Pi
-#print(t.__dict__)
+for x,y in t.dict_trans.items():
+    print(x,' = ',y)
 
 '''Creating an object p as an instance of class Primes.  The list of primes will be built
 automatically.  The reason is becase the constructor of the Primes class inherits the
