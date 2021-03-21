@@ -135,5 +135,5 @@ print('Integers:',p.lst_int, end= '\n')
 #Output the naturals
 print('Naturals:',p.lst_nat,end='\n')
 
-#Out the primes
+#Output the primes
 print('Primes:',p.lst_primes)
